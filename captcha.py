@@ -16,19 +16,13 @@ class captcha:
         mathSecond = random.randrange(1, maxnum)
         mathUser = int(input("What is " + str(mathFirst) +
                              "+" + str(mathSecond) + ">"))
-        if mathUser == mathFirst + mathSecond:
-            return True
-        else:
-            return False
+        return mathUser == mathFirst + mathSecond
 
     def text():
         textText = str(random.randrange(
             1, 999)*random.randrange(1, 999) + 11)
         textUser = input("Write " + str(textText) + ">")
-        if textText == textUser:
-            return True
-        else:
-            return False
+        return textText == textUser
 
     def animal():
         animals = ["Elephat", "Tiger", "Snake", "CRAB", "BIRD", "spider", "Cow", "sheep", "COW",
@@ -42,17 +36,11 @@ class captcha:
         if animalName == "o6zbD1J+cb+omtrcULg8hw==":
             animalUser = input("If the " + animalAnimal + " is " +
                                animalColor + ", what color is it (case-sensitive)>")
-            if animalUser == animalColor:
-                return True
-            else:
-                return False
+            return animalUser == animalColor
         else:
             animalUser = input("If the " + animalAnimal + " is " +
                                animalColor + ", what animal is it (case-sensitive)>")
-            if animalUser == animalAnimal:
-                return True
-            else:
-                return False
+            return animalUser == animalAnimal
 
     def lastword():
         animals = ["Elephat", "Tiger", "Snake", "CRAB", "BIRD", "spider", "Cow", "sheep", "COW",
@@ -67,23 +55,14 @@ class captcha:
         if lastwordWhat == "06zNSgCAITUEurlPewn5tw==":
             lastwordUser = input(
                 "Write the second word from this list: " + str(lastwords) + ">")
-            if lastwordUser == lastwords[1]:
-                return True
-            else:
-                return False
+            return lastwordUser == lastwords[1]
         elif lastwordWhat == "5OAYoY++S8oFDXL15oDlmw==":
             lastwordUser = input(
                 "Write the third word from this list: " + str(lastwords) + ">")
-            if lastwordUser == lastwords[2]:
-                return True
-            else:
-                return False
+            return lastwordUser == lastwords[2]
         elif lastwordWhat == "mwf+NAMaRDt/WGB3k75rPQ==":
             lastwordUser = input(
                 "Write the first word from this list: " + str(lastwords) + ">")
-            if lastwordUser == lastwords[0]:
-                return True
-            else:
-                return False
+            return lastwordUser == lastwords[0]
         else:
             return False
