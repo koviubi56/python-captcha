@@ -5,8 +5,8 @@
 # captcha.text()
 # captcha.animal()
 # captcha.lastword()
-# For help: [GITHUB WIKI URL]
-# TL;DR: CC BY-NC-SA 4.0 & For help: [GITHUB WIKI URL]
+# For help: https://github.com/koviubi56/python-captcha/wiki
+# TL;DR: CC BY-NC-SA 4.0 & For help: https://github.com/koviubi56/python-captcha/wiki
 import random
 
 
