@@ -6,4 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 1.1.0 - 2021-01-24
+### Added
+- Digit captcha
+- Biggest captcha
+- Smallest captcha
+- Name captcha
+- There is now a way to run every captcha (`captcha.all(mathnummax)`)
+### Changed
+- Lastword now has more question types
+- Math now has more plus types.
+### Removed
+- Captcha class
+### Fixed
+- If you need to enter a number, and you enter a string, now the program send you an error messsage.
+
 ## [1.0.0] - 2021-01-23
