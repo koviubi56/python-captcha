@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 1.2.0 - 2021-01-30
+### Added
+- Color captcha
+- New question to digit captcha (What is the ~th digit in ~>)
+- New question to biggest captcha (Enter the ~ number of ~ and ~ >)
+
 ## 1.1.0 - 2021-01-24
 ### Added
 - Digit captcha
