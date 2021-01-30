@@ -1,6 +1,8 @@
 # This work by Koviubi56 is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
 # For help: https://github.com/koviubi56/python-captcha/wiki
 import random
+import tkinter as tk
+import time
 
 
 def math(maxnum):
@@ -98,7 +100,7 @@ def digit():
     digitDigit = random.randrange(4, 10)
     digitNumber = random.randrange(1000000000, 10000000000)
     digitWhat = random.choice(
-        ["I4sZv95d/efwlH55KJZavQ==", "mXYMEkTnMfK9nqShwT8x+A=="])
+        ["I4sZv95d/efwlH55KJZavQ==", "mXYMEkTnMfK9nqShwT8x+A==", "OjX3nWXUCaECPyuemv4EAg=="])
     digitList = []
     for digitInAnsware in str(digitNumber):
         digitList.append(int(digitInAnsware))
@@ -110,6 +112,11 @@ def digit():
         elif digitWhat == "I4sZv95d/efwlH55KJZavQ==":
             digitUser = int(input("Which digit is " + str(digitDigit) +
                                   "th in the number " + str(digitNumber) + ">"))
+        elif digitWhat == "OjX3nWXUCaECPyuemv4EAg==":
+            digitUser = int(
+                input("What is the " + str(digitDigit) + "th digit in " + digitNumber + ">"))
+        else:
+            return False
     except ValueError:
         print("[ERROR]")
         print("ValueError")
@@ -127,20 +134,18 @@ def biggest():
     biggestFirst = ""
     biggestSecond = ""
     biggestWhat = random.choice(
-        ["0cnc8J4Ksbz1pEikjWs1aA==", "DaInXmBOU3b7FMkAOIX61A==", "taE5qLWOMH5XlUqWZdI+8Q=="])
+        ["iu8GCXhuhyTPT+3uV6NSsQ==", "4nJw2yjPdCUTKIDyLwFcmQ=="])
+    biggestQWord = random.choice(["largest", "biggest", "highest"])
     while biggestFirst == biggestSecond:
         biggestFirst = int(random.randrange(1, 100))
         biggestSecond = int(random.randrange(1, 100))
     try:
-        if biggestWhat == "DaInXmBOU3b7FMkAOIX61A==":
+        if biggestWhat == "iu8GCXhuhyTPT+3uV6NSsQ==":
             biggestUser = int(input(str(biggestFirst) + " or " +
-                                    str(biggestSecond) + ": which of these is the largest>"))
-        elif biggestWhat == "0cnc8J4Ksbz1pEikjWs1aA==":
-            biggestUser = int(input(str(biggestFirst) + " or " +
-                                    str(biggestSecond) + ": which of these is the biggest>"))
-        elif biggestWhat == "taE5qLWOMH5XlUqWZdI+8Q==":
-            biggestUser = int(input(str(biggestFirst) + " or " +
-                                    str(biggestSecond) + ": which of these is the highest>"))
+                                    str(biggestSecond) + ": which of these is the " + biggestQWord + ">"))
+        elif biggestWhat == "4nJw2yjPdCUTKIDyLwFcmQ==":
+            biggestUser = int(input("Enter the biggest number of " +
+                                    str(biggestFirst) + " and " + str(biggestSecond) + ">"))
         else:
             return False
     except ValueError:
@@ -206,8 +211,8 @@ def smallest():
 
 
 def name():
-    nameName = random.choice(["John", "Robert", "Michael", "William",
-                              "David", "Richard", "Joseph"])
+    nameName = random.choice(
+        ["John", "Robert", "Michael", "William", "David", "Richard", "Joseph"])
     nameWhat = random.choice(
         ["Mooh4VjoO5NeGJud1blxzg==", "Q0DYWXOPka9F83IIP1pSyg=="])
     if nameWhat == "Mooh4VjoO5NeGJud1blxzg==":
@@ -223,6 +228,38 @@ def name():
         return False
 
 
+def color():
+    print("You get a color, and you need to name it!")
+    print("Please wait...")
+    time.sleep(5)
+    print("If you see it, close the window!")
+    color = random.choice(
+        ["wx9XfbNO+vuRHo837XToBg==", "YY0C75qWSpXAbWlNRpXm1A=="])
+    HEIGHT = 500
+    WIDTH = 500
+
+    root = tk.Tk()
+
+    canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
+    canvas.pack()
+
+    if color == "YY0C75qWSpXAbWlNRpXm1A==":
+        frame = tk.Frame(root, bg='black')
+    elif color == "wx9XfbNO+vuRHo837XToBg==":
+        frame = tk.Frame(root, bg='white')
+
+    frame.place(relwidth=1, relheight=1)
+
+    root.mainloop()
+    colorUser = input("WHITE or black (case-sensitive)>")
+    if colorUser == "WHITE" and color == "wx9XfbNO+vuRHo837XToBg==":
+        return True
+    elif colorUser == "black" and color == "YY0C75qWSpXAbWlNRpXm1A==":
+        return True
+    else:
+        return False
+
+
 def all(mathmaxnum):
     if captcha.math(mathmaxnum) == True:
         if captcha.text() == True:
@@ -232,7 +269,21 @@ def all(mathmaxnum):
                         if captcha.biggest() == True:
                             if captcha.smallest() == True:
                                 if captcha.name() == True:
-                                    return True
+                                    if captcha.color() == True:
+                                        return True
     return False
 
+
+def all2(mathmaxnum):
+    if math(mathmaxnum) == True:
+        if text() == True:
+            if animal() == True:
+                if lastword() == True:
+                    if digit() == True:
+                        if biggest() == True:
+                            if smallest() == True:
+                                if name() == True:
+                                    if color() == True:
+                                        return True
+    return False
 # Made with <3
