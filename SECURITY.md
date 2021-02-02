@@ -20,3 +20,13 @@
 __**A BUG AND A SECURITY VULNERABILITY IS NOT THE SAME!**__ 
 
 :bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang::bangbang:
+
+## Support status
+
+We don't support everything forever.
+
+(YYYY.MM.DD.)
+
+New stuffs: 2021.05.03.
+
+Bug fixes: 2021.06.05
