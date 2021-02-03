@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 1.3.0 - 2021-02-03
+### Added
+- Daycaptcha
+### Fixed
+- The digit captcha
+
 ## 1.2.0 - 2021-01-30
 ### Added
 - Color captcha
