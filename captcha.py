@@ -114,7 +114,7 @@ def digit():
                                   "th in the number " + str(digitNumber) + ">"))
         elif digitWhat == "OjX3nWXUCaECPyuemv4EAg==":
             digitUser = int(
-                input("What is the " + str(digitDigit) + "th digit in " + digitNumber + ">"))
+                input("What is the " + str(digitDigit) + "th digit in " + str(digitNumber) + ">"))
         else:
             return False
     except ValueError:
@@ -260,6 +260,22 @@ def color():
         return False
 
 
+def day():
+    dayQWhat = random.choice(
+        ["X+f59jNsreM/h1LyGpM6abkZIaQP47wasfjfuChxCrHwiYgi4uVFVUpjphSFI33s"])
+    dayDWhat = random.choice(
+        ["Monday", "Tuesday", "WEDNESDAY", "Thursday", "Friday", "saturday", "sunday"])
+    if dayQWhat == "X+f59jNsreM/h1LyGpM6abkZIaQP47wasfjfuChxCrHwiYgi4uVFVUpjphSFI33s":
+        dayUser = input("If tomorrow is " + dayDWhat +
+                        ", what day is today(case-sensitive)>")
+        if dayUser == dayDWhat:
+            return True
+        else:
+            return False
+    else:
+        return False
+
+
 def all(mathmaxnum):
     if captcha.math(mathmaxnum) == True:
         if captcha.text() == True:
@@ -270,7 +286,8 @@ def all(mathmaxnum):
                             if captcha.smallest() == True:
                                 if captcha.name() == True:
                                     if captcha.color() == True:
-                                        return True
+                                        if captcha.day() == True:
+                                            return True
     return False
 
 
@@ -284,6 +301,7 @@ def all2(mathmaxnum):
                             if smallest() == True:
                                 if name() == True:
                                     if color() == True:
-                                        return True
+                                        if day() == True:
+                                            return True
     return False
 # Made with <3
