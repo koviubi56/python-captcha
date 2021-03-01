@@ -1,4 +1,3 @@
-# This work by Koviubi56 is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
 # For help: https://github.com/koviubi56/python-captcha/wiki
 import random
 import tkinter as tk
