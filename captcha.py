@@ -1,16 +1,32 @@
 # For help: https://github.com/koviubi56/python-captcha/wiki
-import random
-import tkinter as tk
 import time
+import tkinter as tk
+import random
 
 
 def math(maxnum):
+    """A math question
+
+    Args:
+        maxnum (int): The maximum addend
+
+    Returns:
+        bool: The captcha succesfullity
+    """
     mathFirst = random.randrange(1, maxnum)
     mathSecond = random.randrange(1, maxnum)
     mathAdd = random.choice(["+", " add ", " plus "])
+    mathWhat = random.choice(
+        ["neabFmf9oly3tMn4tE9Ggw==", "hsBLyYY+7qD6ZDpbvQs+Lw=="])
     try:
-        mathUser = int(input("What is " + str(mathFirst) +
-                             mathAdd + str(mathSecond) + ">"))
+        if mathWhat == "neabFmf9oly3tMn4tE9Ggw==":
+            mathUser = int(input("What is " + str(mathFirst) +
+                                 mathAdd + str(mathSecond) + ">"))
+        elif mathWhat == "hsBLyYY+7qD6ZDpbvQs+Lw==":
+            mathUser = int(
+                input(str(mathFirst) + mathAdd + str(mathSecond) + "is>"))
+        else:
+            return False
     except ValueError:
         print("[ERROR]")
         print("ValueError")
@@ -25,6 +41,11 @@ def math(maxnum):
 
 
 def text():
+    """Gives you a number, and you need to copy it
+
+    Returns:
+        bool: The captcha succesfullity
+    """
     textText = str(random.randrange(
         1, 999)*random.randrange(1, 999) + 11)
     textUser = input("Write " + str(textText) + ">")
@@ -35,41 +56,55 @@ def text():
 
 
 def animal():
-    animals = ["Elephat", "Tiger", "Snake", "CRAB", "BIRD", "spider", "Cow", "sheep", "COW",
-               "Dog", "CAT", "BEE", "PIG", "owl", "monkey", "T-Rex", "Giraffe", "Goat", "FOX", "bear"]
+    """Gives you an animal and its color, and you need to name its name or color
+
+    Returns:
+        bool: The captcha succesfullity
+    """
+    animals = ["Elephat", "Tiger", "Snake", "CRAB", "BIRD", "spider", "Cow", "sheep", "COW", "Dog",
+               "CAT", "BEE", "PIG", "owl", "monkey", "T-Rex", "Giraffe", "Goat", "FOX", "bear", "PENGUIN", "Mouse"]
     colors = ["RED", "Orange", "yellow", "Chartreuse", "green",
               "Spring", "cyan", "azure", "BLUE", "Violet", "magenta", "Rose"]
     animalAnimal = random.choice(animals)
     animalColor = random.choice(colors)
     animalName = random.choice(
-        ["k6r+A87Rzp3mJKDDnjhpzQ==", "o6zbD1J+cb+omtrcULg8hw=="])
+        ["k6r+A87Rzp3mJKDDnjhpzQ==", "o6zbD1J+cb+omtrcULg8hw==", "OsA+1cKz/ko14A9xvyHmbHCZVYq6qqZZFndU29YvUIM="])
     if animalName == "o6zbD1J+cb+omtrcULg8hw==":
         animalUser = input("If the " + animalAnimal + " is " +
                            animalColor + ", what color is it (case-sensitive)>")
-        if animalUser == animalColor:
-            return True
-        else:
-            return False
-    else:
+    elif animalName == "o6zbD1J+cb+omtrcULg8hw==":
         animalUser = input("If the " + animalAnimal + " is " +
                            animalColor + ", what animal is it (case-sensitive)>")
-        if animalUser == animalAnimal:
-            return True
-        else:
-            return False
+    elif animalName == "OsA+1cKz/ko14A9xvyHmbHCZVYq6qqZZFndU29YvUIM=":
+        animalUser = input("The " + animalColor + " " +
+                           animalAnimal + " is what color>")
+    else:
+        return False
+
+    if animalUser == animalColor:
+        return True
+    else:
+        return False
 
 
 def lastword():
-    animals = ["Elephat", "Tiger", "Snake", "CRAB", "BIRD", "spider", "Cow", "sheep", "COW",
-               "Dog", "CAT", "BEE", "PIG", "owl", "monkey", "T-Rex", "Giraffe", "Goat", "FOX", "bear"]
+    """Gives you a list, and you need to write the first/second/third thing from the list
+
+    Returns:
+        bool: The captcha succesfullity
+    """
+    animals = ["Elephat", "Tiger", "Snake", "CRAB", "BIRD", "spider", "Cow", "sheep", "COW", "Dog",
+               "CAT", "BEE", "PIG", "owl", "monkey", "T-Rex", "Giraffe", "Goat", "FOX", "bear", "Penguin", "mouse"]
     colors = ["RED", "Orange", "yellow", "Chartreuse", "green",
               "Spring", "cyan", "azure", "BLUE", "Violet", "magenta", "Rose"]
-    mix = animals + colors
+    words = ["MILK", "orange", "Tree", "WINDOW", "table", "pencil",
+             "Water", "Glue", "BOOK", "paper", "Power", "COLOR", "sky", "Airport", "SLEEP", "Light", "DAY", "Week", "Month", "YEAR"]
+    mix = animals + colors + words
     lastwords = [random.choice(mix), random.choice(
         mix), random.choice(mix)]
     lastwordQ = random.choice(["list", "series"])
-    lastwordWhat = random.choice(["06zNSgCAITUEurlPewn5tw==",
-                                  "5OAYoY++S8oFDXL15oDlmw==", "mwf+NAMaRDt/WGB3k75rPQ=="])
+    lastwordWhat = random.choice(
+        ["06zNSgCAITUEurlPewn5tw==", "5OAYoY++S8oFDXL15oDlmw==", "mwf+NAMaRDt/WGB3k75rPQ=="])
     if lastwordWhat == "06zNSgCAITUEurlPewn5tw==":
         lastwordUser = input(
             "Write the second word from this " + lastwordQ + ": " + str(lastwords) + " (case-sensitive)>")
@@ -96,6 +131,11 @@ def lastword():
 
 
 def digit():
+    """Gives you a number, and you need to write its *th digit
+
+    Returns:
+        bool: The captcha succesfullity
+    """
     digitDigit = random.randrange(4, 10)
     digitNumber = random.randrange(1000000000, 10000000000)
     digitWhat = random.choice(
@@ -130,10 +170,15 @@ def digit():
 
 
 def biggest():
+    """Gives you two numbers, and you need to write the biggest
+
+    Returns:
+        bool: The captcha succesfullity
+    """
     biggestFirst = ""
     biggestSecond = ""
-    biggestWhat = random.choice(
-        ["iu8GCXhuhyTPT+3uV6NSsQ==", "4nJw2yjPdCUTKIDyLwFcmQ=="])
+    biggestWhat = random.choice(["iu8GCXhuhyTPT+3uV6NSsQ==", "4nJw2yjPdCUTKIDyLwFcmQ==",
+                                 "gwUaDNtI2qNmB1RAVlTrDh7wU8XPR/kQi42NSzH3Uug=", "mRYXBTkJnSiHUzuwzEwK5SAUEKkzBHZ330JiyIAQXZA="])
     biggestQWord = random.choice(["largest", "biggest", "highest"])
     while biggestFirst == biggestSecond:
         biggestFirst = int(random.randrange(1, 100))
@@ -143,8 +188,14 @@ def biggest():
             biggestUser = int(input(str(biggestFirst) + " or " +
                                     str(biggestSecond) + ": which of these is the " + biggestQWord + ">"))
         elif biggestWhat == "4nJw2yjPdCUTKIDyLwFcmQ==":
-            biggestUser = int(input("Enter the biggest number of " +
+            biggestUser = int(input("Enter the " + biggestQWord + " number of " +
                                     str(biggestFirst) + " and " + str(biggestSecond) + ">"))
+        elif biggestWhat == "gwUaDNtI2qNmB1RAVlTrDh7wU8XPR/kQi42NSzH3Uug=":
+            biggestUser = int(
+                input(str(biggestFirst) + ", or " + str(biggestSecond) + ": the " + biggestQWord + " is>"))
+        elif biggestWhat == "mRYXBTkJnSiHUzuwzEwK5SAUEKkzBHZ330JiyIAQXZA=":
+            int(input(str(biggestFirst) + ", or " +
+                      str(biggestSecond) + ": the " + biggestQWord + " is>"))
         else:
             return False
     except ValueError:
@@ -169,6 +220,11 @@ def biggest():
 
 
 def smallest():
+    """Gives you two numbers, and you need to write the smallest
+
+    Returns:
+        bool: The captcha succesfullity
+    """
     smallestFirst = ""
     smallestSecond = ""
     smallestWhat = random.choice(
@@ -210,8 +266,13 @@ def smallest():
 
 
 def name():
+    """Gives you a person, and you need to write his name
+
+    Returns:
+        bool: The captcha succesfullity
+    """
     nameName = random.choice(
-        ["John", "Robert", "Michael", "William", "David", "Richard", "Joseph"])
+        ["John", "Robert", "Michael", "William", "David", "Richard", "Joseph", "Liam", "Noah", "Logan", "Benjamin", "Mason", "Elijah", "Oliver"])
     nameWhat = random.choice(
         ["Mooh4VjoO5NeGJud1blxzg==", "Q0DYWXOPka9F83IIP1pSyg=="])
     if nameWhat == "Mooh4VjoO5NeGJud1blxzg==":
@@ -228,6 +289,11 @@ def name():
 
 
 def color():
+    """Gives a color, and you need to write it (black/white)
+
+    Returns:
+        bool: The captcha succesfullity
+    """
     print("You get a color, and you need to name it!")
     print("Please wait...")
     time.sleep(5)
@@ -260,6 +326,11 @@ def color():
 
 
 def day():
+    """Gives you a day, and you need to write it
+
+    Returns:
+        bool: The captcha succesfullity
+    """
     dayQWhat = random.choice(
         ["X+f59jNsreM/h1LyGpM6abkZIaQP47wasfjfuChxCrHwiYgi4uVFVUpjphSFI33s"])
     dayDWhat = random.choice(
@@ -303,4 +374,9 @@ def all2(mathmaxnum):
                                         if day() == True:
                                             return True
     return False
+
 # Made with <3
+# * A lot of things were stealed from textcaptcha.com ! Sorry!
+
+
+all2(10)
