@@ -7,7 +7,8 @@
 
 | Version | Secure          |
 | ------- | ------------------ |
-| All   | :white_check_mark: |
+| Newest   | :white_check_mark: |
+| Not the newest | ⚠️ The newest update is more secure! |
 
 ## Report security vulnerability
 
