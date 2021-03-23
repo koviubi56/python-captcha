@@ -69,7 +69,7 @@ def animal():
     animalColor = random.choice(colors)
     animalName = random.choice(
         ["k6r+A87Rzp3mJKDDnjhpzQ==", "o6zbD1J+cb+omtrcULg8hw==", "OsA+1cKz/ko14A9xvyHmbHCZVYq6qqZZFndU29YvUIM="])
-    if animalName == "o6zbD1J+cb+omtrcULg8hw==":
+    if animalName == "k6r+A87Rzp3mJKDDnjhpzQ==":
         animalUser = input("If the " + animalAnimal + " is " +
                            animalColor + ", what color is it (case-sensitive)>")
     elif animalName == "o6zbD1J+cb+omtrcULg8hw==":
