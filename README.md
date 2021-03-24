@@ -1,4 +1,7 @@
 # python-captcha
+
+[![Unlicense](https://img.shields.io/github/license/koviubi56/python-captcha)](https://github.com/koviubi56/python-captcha/blob/main/LICENSE)
+
 CAPTCHAs in python
 
 CAPTCHAs is useful, if you don't want spam bots, to use your program, server, database, and you don't get DDOS attackes.
