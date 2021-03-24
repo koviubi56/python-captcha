@@ -81,8 +81,16 @@ def animal():
     else:
         return False
 
-    if animalUser == animalColor:
-        return True
+    if animalName == "k6r+A87Rzp3mJKDDnjhpzQ==" or animalAnimal == "OsA+1cKz/ko14A9xvyHmbHCZVYq6qqZZFndU29YvUIM=":
+        if animalUser == animalColor:
+            return True
+        else:
+            return False
+    elif animalName == "o6zbD1J+cb+omtrcULg8hw==":
+        if animalUser == animalAnimal:
+            return True
+        else:
+            return False
     else:
         return False
 
@@ -347,21 +355,6 @@ def day():
 
 
 def all(mathmaxnum):
-    if captcha.math(mathmaxnum) == True:
-        if captcha.text() == True:
-            if captcha.animal() == True:
-                if captcha.lastword() == True:
-                    if captcha.digit() == True:
-                        if captcha.biggest() == True:
-                            if captcha.smallest() == True:
-                                if captcha.name() == True:
-                                    if captcha.color() == True:
-                                        if captcha.day() == True:
-                                            return True
-    return False
-
-
-def all2(mathmaxnum):
     if math(mathmaxnum) == True:
         if text() == True:
             if animal() == True:
@@ -377,6 +370,3 @@ def all2(mathmaxnum):
 
 # Made with <3
 # * A lot of things were stealed from textcaptcha.com ! Sorry!
-
-
-all2(10)
