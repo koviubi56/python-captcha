@@ -24,7 +24,7 @@ def math(maxnum):
                                  mathAdd + str(mathSecond) + ">"))
         elif mathWhat == "hsBLyYY+7qD6ZDpbvQs+Lw==":
             mathUser = int(
-                input(str(mathFirst) + mathAdd + str(mathSecond) + "is>"))
+                input(str(mathFirst) + " " + mathAdd + " " + str(mathSecond) + " is>"))
         else:
             return False
     except ValueError:
@@ -34,10 +34,7 @@ def math(maxnum):
         input("Press enter to continue!")
         input("We will send False to the program, so we say \"The captcha was didn't completed successfully.\" Press enter to confirm!")
         return False
-    if mathUser == mathFirst + mathSecond:
-        return True
-    else:
-        return False
+    return mathUser == mathFirst + mathSecond
 
 
 def text():
@@ -49,10 +46,7 @@ def text():
     textText = str(random.randrange(
         1, 999)*random.randrange(1, 999) + 11)
     textUser = input("Write " + str(textText) + ">")
-    if textText == textUser:
-        return True
-    else:
-        return False
+    return textText == textUser
 
 
 def animal():
@@ -82,15 +76,9 @@ def animal():
         return False
 
     if animalName == "k6r+A87Rzp3mJKDDnjhpzQ==" or animalAnimal == "OsA+1cKz/ko14A9xvyHmbHCZVYq6qqZZFndU29YvUIM=":
-        if animalUser == animalColor:
-            return True
-        else:
-            return False
+        return animalUser == animalColor
     elif animalName == "o6zbD1J+cb+omtrcULg8hw==":
-        if animalUser == animalAnimal:
-            return True
-        else:
-            return False
+        return animalUser == animalAnimal
     else:
         return False
 
@@ -116,24 +104,15 @@ def lastword():
     if lastwordWhat == "06zNSgCAITUEurlPewn5tw==":
         lastwordUser = input(
             "Write the second word from this " + lastwordQ + ": " + str(lastwords) + " (case-sensitive)>")
-        if lastwordUser == lastwords[1]:
-            return True
-        else:
-            return False
+        return lastwordUser == lastwords[1]
     elif lastwordWhat == "5OAYoY++S8oFDXL15oDlmw==":
         lastwordUser = input(
             "Write the third word from this " + lastwordQ + ": " + str(lastwords) + " (case-sensitive)>")
-        if lastwordUser == lastwords[2]:
-            return True
-        else:
-            return False
+        return lastwordUser == lastwords[2]
     elif lastwordWhat == "mwf+NAMaRDt/WGB3k75rPQ==":
         lastwordUser = input(
             "Write the first word from this " + lastwordQ + ": " + str(lastwords) + " (case-sensitive)>")
-        if lastwordUser == lastwords[0]:
-            return True
-        else:
-            return False
+        return lastwordUser == lastwords[0]
     else:
         return False
 
@@ -171,10 +150,7 @@ def digit():
         input("Press enter to continue!")
         input("We will send False to the program, so we say \"The captcha was didn't completed successfully.\" Press enter to confirm!")
         return False
-    if digitUser == digitList[digitDigit - 1]:
-        return True
-    else:
-        return False
+    return digitUser == digitList[digitDigit - 1]
 
 
 def biggest():
@@ -214,15 +190,9 @@ def biggest():
         input("We will send False to the program, so we say \"The captcha was didn't completed successfully.\" Press enter to confirm!")
         return False
     if biggestUser == biggestFirst:
-        if biggestFirst > biggestSecond:
-            return True
-        else:
-            return False
+        return biggestFirst > biggestSecond
     elif biggestUser == biggestSecond:
-        if biggestFirst < biggestSecond:
-            return True
-        else:
-            return False
+        return biggestFirst < biggestSecond
     else:
         return False
 
@@ -260,15 +230,9 @@ def smallest():
         input("We will send False to the program, so we say \"The captcha was didn't completed successfully.\" Press enter to confirm!")
         return False
     if smallestUser == smallestFirst:
-        if smallestFirst < smallestSecond:
-            return True
-        else:
-            return False
+        return smallestFirst < smallestSecond
     elif smallestUser == smallestSecond:
-        if smallestFirst > smallestSecond:
-            return True
-        else:
-            return False
+        return smallestFirst > smallestSecond
     else:
         return False
 
@@ -290,10 +254,7 @@ def name():
                          nameName + ", what is their name>")
     else:
         return False
-    if nameUser == nameName:
-        return True
-    else:
-        return False
+    return nameUser == nameName
 
 
 def color():
@@ -346,10 +307,7 @@ def day():
     if dayQWhat == "X+f59jNsreM/h1LyGpM6abkZIaQP47wasfjfuChxCrHwiYgi4uVFVUpjphSFI33s":
         dayUser = input("If tomorrow is " + dayDWhat +
                         ", what day is today(case-sensitive)>")
-        if dayUser == dayDWhat:
-            return True
-        else:
-            return False
+        return dayUser == dayDWhat
     else:
         return False
 
@@ -370,3 +328,6 @@ def all(mathmaxnum):
 
 # Made with <3
 # * A lot of things were stealed from textcaptcha.com ! Sorry!
+
+
+all(10)
