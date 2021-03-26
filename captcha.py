@@ -87,10 +87,7 @@ def animal():
         else:
             return False
     elif animalName == "o6zbD1J+cb+omtrcULg8hw==":
-        if animalUser == animalAnimal:
-            return True
-        else:
-            return False
+        return animalUser == animalAnimal
     else:
         return False
 
