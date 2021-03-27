@@ -79,8 +79,7 @@ def animal():
         return animalUser == animalColor
     elif animalName == "o6zbD1J+cb+omtrcULg8hw==":
         return animalUser == animalAnimal
-    else:
-        return False
+    return False
 
 
 def lastword():
@@ -113,8 +112,7 @@ def lastword():
         lastwordUser = input(
             "Write the first word from this " + lastwordQ + ": " + str(lastwords) + " (case-sensitive)>")
         return lastwordUser == lastwords[0]
-    else:
-        return False
+    return False
 
 
 def digit():
@@ -193,8 +191,7 @@ def biggest():
         return biggestFirst > biggestSecond
     elif biggestUser == biggestSecond:
         return biggestFirst < biggestSecond
-    else:
-        return False
+    return False
 
 
 def smallest():
@@ -233,8 +230,7 @@ def smallest():
         return smallestFirst < smallestSecond
     elif smallestUser == smallestSecond:
         return smallestFirst > smallestSecond
-    else:
-        return False
+    return False
 
 
 def name():
@@ -290,8 +286,7 @@ def color():
         return True
     elif colorUser == "black" and color == "YY0C75qWSpXAbWlNRpXm1A==":
         return True
-    else:
-        return False
+    return False
 
 
 def day():
@@ -308,21 +303,20 @@ def day():
         dayUser = input("If tomorrow is " + dayDWhat +
                         ", what day is today(case-sensitive)>")
         return dayUser == dayDWhat
-    else:
-        return False
+    return False
 
 
 def all(mathmaxnum):
-    if math(mathmaxnum) == True:
-        if text() == True:
-            if animal() == True:
-                if lastword() == True:
-                    if digit() == True:
-                        if biggest() == True:
-                            if smallest() == True:
-                                if name() == True:
-                                    if color() == True:
-                                        if day() == True:
+    if math(mathmaxnum):
+        if text():
+            if animal():
+                if lastword():
+                    if digit():
+                        if biggest():
+                            if smallest():
+                                if name():
+                                    if color():
+                                        if day():
                                             return True
     return False
 
