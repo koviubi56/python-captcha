@@ -1,6 +1,7 @@
 # python-captcha
 
 [![Unlicense](https://img.shields.io/github/license/koviubi56/python-captcha)](https://github.com/koviubi56/python-captcha/blob/main/LICENSE)
+[![CodeFactor](https://www.codefactor.io/repository/github/koviubi56/python-captcha/badge/main)](https://www.codefactor.io/repository/github/koviubi56/python-captcha/overview/main)
 
 CAPTCHAs in python
 
