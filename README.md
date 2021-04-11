@@ -2,6 +2,7 @@
 
 [![Unlicense](https://img.shields.io/github/license/koviubi56/python-captcha)](https://github.com/koviubi56/python-captcha/blob/main/LICENSE)
 [![CodeFactor](https://www.codefactor.io/repository/github/koviubi56/python-captcha/badge/main)](https://www.codefactor.io/repository/github/koviubi56/python-captcha/overview/main)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/991d2fc958184133bb09d6799c92746a)](https://www.codacy.com/gh/koviubi56/python-captcha/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=koviubi56/python-captcha&amp;utm_campaign=Badge_Grade)
 
 CAPTCHAs in python
 
