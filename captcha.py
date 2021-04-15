@@ -15,7 +15,7 @@ def math(maxnum):
     """
     mathFirst = random.randrange(1, maxnum)
     mathSecond = random.randrange(1, maxnum)
-    mathAdd = random.choice(["+", " add ", " plus "])
+    mathAdd = random.choice(["+", " plus "])
     mathWhat = random.choice(
         ["neabFmf9oly3tMn4tE9Ggw==", "hsBLyYY+7qD6ZDpbvQs+Lw=="])
     try:
@@ -321,7 +321,8 @@ def all(mathmaxnum):
     return False
 
 # Made with <3
-# * A lot of things were stealed from textcaptcha.com ! Sorry!
+# * A lot of things were stealed from textcaptcha.com!
 
 
-all(10)
+if __name__ == '__main__':
+    all(10)
