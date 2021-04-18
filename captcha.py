@@ -125,9 +125,7 @@ def digit():
     digitNumber = random.randrange(1000000000, 10000000000)
     digitWhat = random.choice(
         ["I4sZv95d/efwlH55KJZavQ==", "mXYMEkTnMfK9nqShwT8x+A==", "OjX3nWXUCaECPyuemv4EAg=="])
-    digitList = []
-    for digitInAnsware in str(digitNumber):
-        digitList.append(int(digitInAnsware))
+    digitList = [int(digitInAnsware) for digitInAnsware in str(digitNumber)]
     digitInAnsware = ""
     try:
         if digitWhat == "mXYMEkTnMfK9nqShwT8x+A==":
@@ -282,11 +280,12 @@ def color():
 
     root.mainloop()
     colorUser = input("WHITE or black (case-sensitive)>")
-    if colorUser == "WHITE" and color == "wx9XfbNO+vuRHo837XToBg==":
-        return True
-    elif colorUser == "black" and color == "YY0C75qWSpXAbWlNRpXm1A==":
-        return True
-    return False
+    return (
+        colorUser == "WHITE"
+        and color == "wx9XfbNO+vuRHo837XToBg=="
+        or colorUser == "black"
+        and color == "YY0C75qWSpXAbWlNRpXm1A=="
+    )
 
 
 def day():
@@ -307,18 +306,18 @@ def day():
 
 
 def all(mathmaxnum):
-    if math(mathmaxnum):
-        if text():
-            if animal():
-                if lastword():
-                    if digit():
-                        if biggest():
-                            if smallest():
-                                if name():
-                                    if color():
-                                        if day():
-                                            return True
-    return False
+    return bool(
+        math(mathmaxnum)
+        and text()
+        and animal()
+        and lastword()
+        and digit()
+        and biggest()
+        and smallest()
+        and name()
+        and color()
+        and day()
+    )
 
 # Made with <3
 # * A lot of things were stealed from textcaptcha.com!
